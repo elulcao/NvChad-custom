@@ -72,10 +72,10 @@ M.nvimtree = {
 }
 
 -- cmp 
-M.cmp = {
-  sources = {
-    { name = "copilot" },
-  },
-}
+-- M.cmp = {
+--   sources = {
+--     { name = "copilot" },
+--   },
+-- }
 
 return M
