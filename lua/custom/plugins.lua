@@ -18,9 +18,9 @@ local plugins = {
   },
   {
     "fatih/vim-go",
-    ft = {"go"},
+    ft = {"go", "gomod"},
+    event = "CmdlineEnter",
     config = function ()
-      require "custom.configs.vim-go"
     end,
   },
   {

@@ -11,7 +11,6 @@ M.general = {
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
     "lua",
     "html",
     "css",
@@ -22,7 +21,6 @@ M.treesitter = {
     "bash",
     "go",
     "yaml",
-    "lua",
     "vim",
     "vimdoc",
   },
