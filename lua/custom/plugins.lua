@@ -46,6 +46,12 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
+  {
+    "vimwiki/vimwiki",
+    lazy = false,
+    config = function()
+    end,
+  },
   -- {
   --   "hrsh7th/nvim-cmp",
   --   dependencies = {
