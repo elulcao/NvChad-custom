@@ -17,29 +17,21 @@ local plugins = {
     opts = overrides.mason,
   },
   {
-    "fatih/vim-go",
-    ft = {"go", "gomod"},
-    event = "CmdlineEnter",
-    config = function ()
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+    end,
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function()
+      return require "custom.configs.null-ls"
     end,
   },
   {
@@ -52,52 +44,32 @@ local plugins = {
     config = function()
     end,
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = {
-  --     {
-  --       "zbirenbaum/copilot-cmp",
-  --       config = function()
-  --         require "plugins.configs.cmp"
-  --         require "custom.configs.copilot-cmp"
-  --       end,
-  --     },
-  --   },
-  --   opts = {
-  --     sources = {
-  --       { name = "nvim_lsp" },
-  --       { name = "luasnip" },
-  --       { name = "buffer" },
-  --       { name = "nvim_lua" },
-  --       { name = "path" },
-  --       { name = "copilot" },
-  --     },
-  --   },
-  -- },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require "custom.configs.copilot"
-  --   end,
-  -- },
-  -- {
-    -- "zbirenbaum/copilot-cmp",
-    -- dependencies = {
-      -- {
-        -- "zbirenbaum/copilot.lua",
-        -- cmd = "Copilot",
-        -- event = "InsertEnter",
-        -- config = function()
-          -- require "custom.configs.copilot"
-        -- end,
-      -- },
-    -- },
-    -- config = function()
-      -- require "custom.configs.copilot-cmp"
-    -- end,
-  -- },
+  {
+    "mfussenegger/nvim-dap",
+    init = function()
+      require("core.utils").load_mappings("dap")
+    end
+  },
+  {
+    "dreamsofcode-io/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+      require("core.utils").load_mappings("dap_go")
+    end
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+      require("core.utils").load_mappings("gopher")
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
+  },
 }
 
 return plugins
