@@ -1,3 +1,4 @@
+---@type MappingsTable
 local M = {}
 
 M.dap = {
