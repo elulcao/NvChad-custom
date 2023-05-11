@@ -51,7 +51,6 @@ M.mason = {
     "gopls",
     "golangci-lint-langserver",
     "goimports",
-    "gofumpt",
     -- bash stuff
     "shellcheck",
     "bash-language-server",
