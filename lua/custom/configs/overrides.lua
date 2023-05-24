@@ -49,13 +49,24 @@ M.mason = {
     "prettier",
     -- go stuff
     "gopls",
+    "golangci-lint",
     "golangci-lint-langserver",
     "goimports",
+    "goimports-reviser",
     -- bash stuff
     "shellcheck",
     "bash-language-server",
     -- python stuff
     "pyright",
+     "flake8",
+     "black",
+     "mypy",
+     "pydocstyle",
+     "pylint",
+     "pyre",
+     "autoflake",
+     "autopep8",
+     "python-lsp-server",
   },
 }
 
