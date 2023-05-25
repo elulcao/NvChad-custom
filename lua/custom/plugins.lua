@@ -73,13 +73,13 @@ local plugins = {
   },
   {
     "m4xshen/autoclose.nvim",
-    event = "BufEnter",
-    config = function()
+    event = "BufEnter",    config = function()
         require("autoclose").setup()
     end,
   },
   {
 	"zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "InsertEnter",
     opts = overrides.copilot,
   },
@@ -88,21 +88,12 @@ local plugins = {
     dependencies = {
     	{
 		    "zbirenbaum/copilot-cmp",
-            config = function()
-			require("copilot_cmp").setup()
-			end,
+        config = function()
+			    require("copilot_cmp").setup()
+			  end,
       },
     },
-    opts = {
-      sources = {
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "copilot",  group_index = 2 },
-        { name = "luasnip",  group_index = 2 },
-        { name = "buffer",   group_index = 2 },
-        { name = "nvim_lua", group_index = 2 },
-        { name = "path",     group_index = 2 },
-      },
-    },
+		opts = overrides.nvimcmp,
   },
 }
 
