@@ -11,18 +11,24 @@ M.general = {
 
 M.treesitter = {
   ensure_installed = {
-    "lua",
-    "html",
-    "css",
-    "javascript",
-    "c",
-    "markdown",
-    "markdown_inline",
     "bash",
+    "c",
+    "css",
     "go",
-    "yaml",
+    "gomod",
+    "gosum",
+    "html",
+    "javascript",
+    "json",
+    "jsonc",
+    "lua",
+    "markdown_inline",
+    "markdown",
+    "python",
+    "typescript",
     "vim",
     "vimdoc",
+    "yaml",
   },
   highlight = {
     enable = true,
@@ -38,35 +44,41 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
+    -- lua 
     "lua-language-server",
     "stylua",
-    -- web dev stuff
+    -- web
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "sumneko_lua",
+    "tsserver",
     "deno",
     "prettier",
-    -- go stuff
+    -- go
     "gopls",
     "golangci-lint",
     "golangci-lint-langserver",
     "goimports",
     "goimports-reviser",
-    -- bash stuff
+    -- java 
+    "java-language-server",
+    -- azure 
+    "azure-pipelines-language-server",
+    -- bash
     "shellcheck",
     "bash-language-server",
-    -- python stuff
+    -- python
     "pyright",
-     "flake8",
-     "black",
-     "mypy",
-     "pydocstyle",
-     "pylint",
-     "pyre",
-     "autoflake",
-     "autopep8",
-     "python-lsp-server",
+    "flake8",
+    "black",
+    "mypy",
+    "pydocstyle",
+    "pylint",
+    "pyre",
+    "autoflake",
+    "autopep8",
+    "python-lsp-server",
   },
 }
 
@@ -89,8 +101,8 @@ M.nvimtree = {
 }
 
 M.copilot = {
--- Possible configurable fields can be found on:
--- https://github.com/zbirenbaum/copilot.lua#setup-and-configuration
+  -- Possible configurable fields can be found on:
+  -- https://github.com/zbirenbaum/copilot.lua#setup-and-configuration
   suggestion = {
     enable = false,
   },
