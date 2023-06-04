@@ -41,3 +41,14 @@ lspconfig.tsserver.setup {
   -- root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
   root_dir = function () return vim.loop.cwd() end,
 }
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"pyright-langserver", "--stdio"},
+  filetypes = {
+    "python",
+  },
+  -- root_dir = util.root_pattern("setup.py", "setup.cfg", "pyproject.toml", "requirements.txt", ".git"),
+  root_dir = function () return vim.loop.cwd() end,
+}
