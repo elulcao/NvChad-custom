@@ -33,6 +33,7 @@ $ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
 ```bash
 $ cd
-$ git clone https://github.com/elulcao/NvChad-custom --depth 1 ~/.config/nvim/lua/custom
+$ git clone https://github.com/elulcao/NvChad-custom.git --depth 1
+$ ln -sf $HOME/NvChad-custom/lua/custom $HOME/.config/nvim/lua/
 $ nvim
 ```
