@@ -1,5 +1,6 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local config = require("plugins.configs.lspconfig")
+local on_attach = config.on_attach
+local capabilities = config.capabilities
 
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
@@ -33,6 +34,11 @@ lspconfig.tsserver.setup({
 		"typescript-language-server",
 		"--stdio",
 	},
+	init_options = {
+		preferences = {
+			disableSuggestions = false,
+		},
+	},
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -41,7 +47,6 @@ lspconfig.tsserver.setup({
 		"typescriptreact",
 		"typescript.tsx",
 	},
-	-- root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 	root_dir = function()
 		return vim.loop.cwd()
 	end,

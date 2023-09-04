@@ -50,6 +50,7 @@ M.mason = {
 		-- web
 		"css-lsp",
 		"html-lsp",
+		"eslint-lsp",
 		"typescript-language-server",
 		"deno",
 		"prettier",
