@@ -59,3 +59,11 @@ lspconfig.pyright.setup({
 		"python",
 	},
 })
+
+lspconfig.jdtls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		-- your personal jdtls preferences
+	},
+})

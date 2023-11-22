@@ -64,6 +64,7 @@ M.mason = {
 		"goimports-reviser",
 		-- java
 		"java-language-server",
+		"jdtls",
 		-- azure
 		"azure-pipelines-language-server",
 		-- bash
