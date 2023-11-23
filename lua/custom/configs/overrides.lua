@@ -18,6 +18,7 @@ M.treesitter = {
 		"gomod",
 		"gosum",
 		"html",
+		"java",
 		"javascript",
 		"json",
 		"jsonc",

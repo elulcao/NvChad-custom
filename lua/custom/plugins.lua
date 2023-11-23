@@ -32,6 +32,7 @@ local plugins = {
 			"go",
 			"python",
 			"lua",
+			"java",
 			"javascript",
 			"typescript",
 			"typescriptreact",
