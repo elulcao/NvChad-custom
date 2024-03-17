@@ -22,18 +22,10 @@ the ultimate coding experience.
 $ brew install neovim
 ```
 
-### NvChad
+### NvChad Configuration
 
 ```bash
 $ rm -rf ~/.cache/nvim ~/.local/share/nvim/ ~/.config/nvim
-$ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-```
-
-## Configuration
-
-```bash
-$ cd
-$ git clone https://github.com/elulcao/NvChad-custom.git --depth 1
-$ ln -sf $HOME/NvChad-custom/lua/custom $HOME/.config/nvim/lua/
+$ git clone https://github.com/elulcao/NvChad-custom.git --depth 1 $HOME/.config/nvim
 $ nvim
 ```

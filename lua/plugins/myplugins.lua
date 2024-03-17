@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require("configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -22,8 +22,8 @@ local plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("plugins.configs.lspconfig")
-			require("custom.configs.lspconfig")
+			require("nvchad.configs.lspconfig")
+			require("configs.lspconfig")
 		end,
 	},
 	{
@@ -39,7 +39,7 @@ local plugins = {
 			"javascriptreact",
 		},
 		opts = function()
-			local custom_null_ls = require("custom.configs.null-ls")
+			local custom_null_ls = require("configs.null-ls")
 			return custom_null_ls
 		end,
 	},
@@ -55,8 +55,8 @@ local plugins = {
 	{
 		"mfussenegger/nvim-dap",
 		init = function()
-			require("custom.configs.dap")
-			require("core.utils").load_mappings("dap")
+			require("configs.dap")
+			-- require("core.utils").load_mappings("dap")
 		end,
 	},
 	{
@@ -69,7 +69,7 @@ local plugins = {
 		config = function()
 			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 			require("dap-python").setup(path)
-			require("core.utils").load_mappings("dap_python")
+			-- require("core.utils").load_mappings("dap_python")
 		end,
 	},
 	{
@@ -78,7 +78,7 @@ local plugins = {
 		dependencies = "mfussenegger/nvim-dap",
 		config = function(_, opts)
 			require("dap-go").setup(opts)
-			require("core.utils").load_mappings("dap_go")
+			-- require("core.utils").load_mappings("dap_go")
 		end,
 	},
 	{

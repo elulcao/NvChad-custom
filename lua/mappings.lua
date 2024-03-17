@@ -1,3 +1,4 @@
+require "nvchad.mappings"
 ---@type MappingsTable
 local M = {}
 

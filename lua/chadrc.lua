@@ -2,12 +2,12 @@
 local M = {}
 
 -- Path to overriding theme and highlights files
-local highlights = require("custom.highlights")
+local highlights = require("highlights")
 
 M.ui = {
-	theme = "chadracula",
+	theme = "chadracula-evondev",
 	theme_toggle = {
-		"chadracula",
+		"chadracula-evondev",
 		"catppuccin",
 	},
 	hl_override = highlights.override,
@@ -18,7 +18,7 @@ M.ui = {
 	},
 }
 
-M.plugins = "custom.plugins"
-M.mappings = require("custom.mappings")
+-- M.plugins = "plugins"
+-- M.mappings = require("mappings")
 
 return M
