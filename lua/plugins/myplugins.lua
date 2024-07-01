@@ -48,11 +48,6 @@ local plugins = {
 		opts = overrides.nvimtree,
 	},
 	{
-		"vimwiki/vimwiki",
-		lazy = false,
-		config = function() end,
-	},
-	{
 		"mfussenegger/nvim-dap",
 		init = function()
 			require("configs.dap")
