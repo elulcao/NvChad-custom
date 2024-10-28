@@ -1,3 +1,3 @@
-require "nvchad.options"
+require("nvchad.options")
 
 -- add yours here!
