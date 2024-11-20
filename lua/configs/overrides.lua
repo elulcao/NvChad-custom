@@ -45,7 +45,10 @@ M.treesitter = {
 
 M.mason = {
 	ensure_installed = {
+		-- lsp
+		"clangd",
 		-- lua
+		"vue-language-server",
 		"lua-language-server",
 		"stylua",
 		-- web

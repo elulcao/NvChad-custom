@@ -9,6 +9,7 @@ local opts = {
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.eslint,
+		-- null_ls.builtins.formatting.google_java_format,
 		-- null_ls.builtins.formatting.golines,
 	},
 	on_attach = function(client, bufnr)
