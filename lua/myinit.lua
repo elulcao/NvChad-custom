@@ -1,7 +1,6 @@
 local g = vim.g
 local opt = vim.opt
 local HOME = os.getenv("HOME")
--- local autocmd = vim.api.nvim_create_autocmd
 
 opt.colorcolumn = "79,99"
 opt.fileformat = "unix"

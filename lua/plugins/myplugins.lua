@@ -149,6 +149,12 @@ local plugins = {
 			require("base46").load_all_highlights()
 		end,
 	},
+	{
+		"echasnovski/mini.nvim",
+		config = function()
+			require("mini.icons").setup()
+		end,
+	},
 }
 
 return plugins
