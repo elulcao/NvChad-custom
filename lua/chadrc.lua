@@ -10,12 +10,20 @@ M.ui = {
 		"chadracula-evondev",
 		"catppuccin",
 	},
+	statusline = {
+		theme = "vscode",
+	},
 	hl_override = highlights.override,
 	hl_add = highlights.add,
 	tabufline = {
 		enable = true,
 		lazyload = false,
 	},
+}
+
+M.base64 = {
+	theme = "tundra",
+	-- transparency = true,
 }
 
 -- M.plugins = "plugins"

@@ -5,6 +5,16 @@ local capabilities = config.capabilities
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 
+-- if you just want default config for the servers then put them in a table
+local servers = { "html", "cssls", "eslint" }
+
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+end
+
 lspconfig.gopls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -27,31 +37,6 @@ lspconfig.gopls.setup({
 	},
 })
 
-lspconfig.tsserver.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	cmd = {
-		"typescript-language-server",
-		"--stdio",
-	},
-	init_options = {
-		preferences = {
-			disableSuggestions = false,
-		},
-	},
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-		"typescript",
-		"typescriptreact",
-		"typescript.tsx",
-	},
-	root_dir = function()
-		return vim.loop.cwd()
-	end,
-})
-
 lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -63,7 +48,30 @@ lspconfig.pyright.setup({
 lspconfig.jdtls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
 	settings = {
 		-- your personal jdtls preferences
 	},
 })
+
+lspconfig.ts_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	init_options = {
+		plugins = { -- I think this was my breakthrough that made it work
+			{
+				name = "@vue/typescript-plugin",
+				location = "/usr/local/lib/node_modules/@vue/language-server",
+				languages = { "vue" },
+			},
+		},
+	},
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+})
+
+lspconfig.clangd.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.volar.setup({})
