@@ -67,4 +67,24 @@ M.dap_python = {
 	},
 }
 
+M.menu = {
+	plugin = true,
+	n = {
+		["<C-t>"] = {
+			function()
+				require("menu").open("default")
+			end,
+			"Open menu (keyboard)",
+		},
+		["<RightMouse>"] = {
+			function()
+				vim.cmd.exec('"normal! \\<RightMouse>"')
+				local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+				require("menu").open(options, { mouse = true })
+			end,
+			"Open menu (mouse)",
+		},
+	},
+}
+
 return M

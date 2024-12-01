@@ -155,6 +155,20 @@ local plugins = {
 			require("mini.icons").setup()
 		end,
 	},
+	{
+		"nvzone/volt",
+		lazy = true,
+	},
+	{
+		"nvzone/menu",
+		lazy = true,
+    config = function()
+      require("menu").setup({
+        position = "center",
+        border = "rounded",
+      })
+    end,
+	},
 }
 
 return plugins
