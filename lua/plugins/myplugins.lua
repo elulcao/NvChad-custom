@@ -169,6 +169,9 @@ local plugins = {
       })
     end,
 	},
+  { 
+    "nvim-neotest/nvim-nio" 
+  },
 }
 
 return plugins
